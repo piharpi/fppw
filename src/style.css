@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Ubuntu, sans-serif;
+  color: #595e61;
+  height: 100vh;
+  position: fixed;
+  background-image: url("https://source.unsplash.com/t9DrUY6wq7Y");
+  background-color: #131418;
+  /* background-color: rgba(19, 20, 24, 0.1); */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#app::before {
+  content: "Photo by Iswanto Arif @ Unsplash.";
+  font-size: 13px;
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+  color: #e4f7fe;
+}
+
+.aside {
+  /* align-self: start; */
+  /* position: fixed; */
+}
+
+.card {
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.card__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card__description {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding-left: 3px;
+  text-transform: capitalize;
+  color: #e4f7fe;
+}
+
+.card__temperature {
+  /* text-align: center; */
+  font-weight: lighter;
+  font-size: 4rem;
+  /* color: #0d122b; */
+  color: #e4f7fe;
+  position: relative;
+  display: flex;
+}
+
+.card__meta-data {
+  margin-top: 25px;
+  display: flex;
+  max-width: 650px;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* border-radius: 1px; */
+  /* background-color: #131418; */
+  background-color: rgba(19, 20, 24, 0.1);
+  /* border: 1px solid #1a1a1c; */
+  /* border: 1px solid #eaeaea; */
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 8px 0px rgba(56, 61, 63, 0.1);
+  padding: 20px;
+}
+
+/* .card__meta-data div:not(:first-child) {
+  border-top: 1px solid black;
+} */
+
+.card__meta-data div {
+  padding: 10px 0;
+  font-weight: 500;
+  /* color: #0d122b; */
+  color: #f0f8ff;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.card__meta-data div span {
+  /* color: #595E61; */
+  color: #c7bebe;
+  font-weight: 400;
+  width: 105px;
+  text-align: left;
+}
+
+.content {
+  width: 100%;
+  max-width: 670px;
+  padding: 10px;
+}
+
+.content__title {
+  color: #f0f8ff;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 15px 0;
+}
+
+.forecast {
+  /* border: 1px solid black; */
+  background-color: rgba(19, 20, 24, 0.39);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f0f8ff;
+  padding: 7px 20px 7px 5px;
+}
+
+.forecast:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.forecast__icon {
+  width: 55px;
+  height: 55px;
+}
+
+.forecast__temperature-average {
+  font-size: 2em;
+}
+
+.forecast__event-date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.forecast__temperature-average {
+  font-weight: normal;
+}
+
+.forecast__temperature-min,
+.forecast__temperature-max {
+  font-size: 13px;
+}
+
+.forecast__description {
+  text-align: left;
+}
+
+.forecast__description-main {
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.search {
+  display: flex;
+}
+
+.search__location {
+  border: 0;
+  padding: 10px 0 10px 27px;
+  font-size: 16px;
+  border-radius: 4px 0 0 4px;
+  font-family: "Ubuntu";
+  width: 170px;
+  color: #0d122b;
+  /* color: #f0f8ff; */
+  background-color: #fff;
+  outline: none;
+}
+
+.search__button {
+  padding: 10px 15px;
+  color: #0d122b;
+  border-radius: 0 4px 4px 0;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  transition: 100ms ease-in;
+}
+
+.search__button:active {
+  box-shadow: inset 2px 2px 14px #c7c7c7;
+}
+
+.search__location:focus {
+  /* border-bottom: 2px solid #ec6e4c; */
+}
+
+.heading-right i.fas.fa-map-marker-alt {
+  position: relative;
+  left: 21px;
+  top: 10px;
+  color: #ec6e4c;
+}
+
+.loading {
+  position: absolute;
+  z-index: 99;
+  background-color: rgba(19, 20, 24, 0.89);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  color: #1157568c;
+  align-items: center;
+  font-size: 4em;
+}

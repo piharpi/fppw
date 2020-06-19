@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+    <script src="./src/app.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./src/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./src/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./src/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./src/img/site.webmanifest" />
+    <title>Cuaca di Banyuwangi, ID</title>
+  </head>
+  <body>
+    <div id="app">
+      <aside class="aside">
+        <div class="card">
+          <div class="card__heading">
+            <div class="heading-left">
+              <h2 class="card__temperature">
+                31.9°
+              </h2>
+              <h1 class="card__description">
+                Overcast clouds
+              </h1>
+            </div>
+            <div class="heading-right">
+              <div class="search">
+                <i class="fas fa-map-marker-alt"></i>
+                <input
+                  class="search__location"
+                  type="text"
+                  value="Banyuwangi, ID"
+                />
+                <button class="search__button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card__meta-data">
+            <div class="meta-data__wind">
+              Wind
+              <span class="meta-data__wind-value">2.6 m/s</span>
+            </div>
+            <div class="meta-data__pressure">
+              Pressure
+              <span class="meta-data__pressure-value">1010 hpa</span>
+            </div>
+            <div class="meta-data__humidity">
+              Humidity
+              <span class="meta-data__humidity-value">74 %</span>
+            </div>
+            <div class="meta-data__sunrise">
+              Sunrise
+              <span class="meta-data__sunrise-value">05:49</span>
+            </div>
+            <div class="meta-data__sunset">
+              Sunset
+              <span class="meta-data__sunset-value">17:29</span>
+            </div>
+            <div class="meta-data__geo">
+              Geo coords
+              <span class="meta-data__geo-value">-7.72, 110.36</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="content">
+        <h1 class="content__title">10 day weather forecast</h1>
+      </main>
+    </div>
+    <div class="loading">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div>
+  </body>
+</html>
