@@ -35,7 +35,7 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
       .then((blob) => {
         console.log(blob);
         const [weather, forecast] = blob;
-        initWheather(weather);
+        initWheather(q, weather);
         initForecast(forecast);
         const loading = document.querySelector(".loading");
         if (loading) loading.remove();
@@ -43,11 +43,11 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
       .catch((error) => console.log(error));
   };
 
-  function initWheather({ main, coord, name, weather, wind, sys }) {
+  function initWheather(q, { main, coord, name, weather, wind, sys }) {
     temp.textContent = `${main.temp}°`;
     desc.textContent = `${weather[0].description}`;
     search.value = `${name}, ${sys.country}`;
-    localStorage.setItem("q", `${name}, ${sys.country}`.replace(/\s/g, ""));
+    localStorage.setItem("q", q.replace(/\s/g, ""));
     airspeed.textContent = `${wind.speed} m/s`;
     pressure.textContent = `${main.pressure} hpa`;
     humidity.textContent = `${main.humidity} %`;
