@@ -51,7 +51,8 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
     humidity.textContent = `${main.humidity} %`;
     sunset.textContent = `${moment.unix(sys.sunset).format("LT")}`;
     sunrise.textContent = `${moment.unix(sys.sunrise).format("LT")}`;
-    geo.textContent = ` ${coord.lat}, ${coord.lon}`;
+    geo.textContent = `${coord.lat}, ${coord.lon}`;
+    document.title = `Cuaca di ${name}, ${sys.country}`;
   }
 
   function initForecast({ list, cnt }) {
