@@ -33,7 +33,6 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
   const initializeELement = (q) => {
     getData(q)
       .then((blob) => {
-        console.log(blob);
         const [weather, forecast] = blob;
         initWheather(q, weather);
         initForecast(forecast);
@@ -58,7 +57,6 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
   }
 
   function initForecast({ list, cnt }) {
-    console.log(list[0]);
     const forecast_item = document.querySelectorAll(".forecast");
     forecast_item.forEach((i) => i.remove());
     const data_count = document.querySelector(".content__title");
