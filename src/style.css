@@ -15,7 +15,7 @@
   font-family: Ubuntu, sans-serif;
   color: #595e61;
   min-height: 100vh;
-  min-width: 100%;
+  width: 100%;
   position: fixed;
   background-image: url("https://source.unsplash.com/t9DrUY6wq7Y");
   background-color: #131418;
@@ -144,6 +144,10 @@
   height: 55px;
 }
 
+.forecast__description {
+  width: 114px;
+}
+
 .forecast__temperature-average {
   font-size: 2em;
 }
@@ -229,4 +233,11 @@
   color: #1157568c;
   align-items: center;
   font-size: 4em;
+}
+
+
+@media only screen and (max-width: 512px) {
+  .forecast__description {
+    display: none;
+  }
 }

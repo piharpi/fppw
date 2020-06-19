@@ -18,12 +18,13 @@ const sunset = document.querySelector(".meta-data__sunset-value");
 const sunrise = document.querySelector(".meta-data__sunrise-value");
 const humidity = document.querySelector(".meta-data__humidity-value");
 const geo = document.querySelector(".meta-data__geo-value");
+const content = document.querySelector(".container");
 const fetcher = (url) => fetch(url).then((data) => data.json());
 
 (() => {
   const getData = async (q) => {
     WEATHER_API = `${URL}weather?q=${q}&appid=${API_TOKEN}&units=metric`;
-    FORECAST_API = `${URL}forecast?q=${q}&cnt=10&appid=${API_TOKEN}&units=metric`;
+    FORECAST_API = `${URL}forecast?q=${q}&cnt=5&appid=${API_TOKEN}&units=metric`;
     const res = Promise.all([fetcher(WEATHER_API), fetcher(FORECAST_API)]);
     return await res;
     // FIXME: error scoping weather nilai string kosong, tidak dapat diubah dari navigotor
@@ -100,7 +101,7 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
       `;
       })
       .join("");
-    data_count.insertAdjacentHTML("afterend", el);
+    content.insertAdjacentHTML("beforeend", el);
   }
 
   initializeELement(QUERY);
