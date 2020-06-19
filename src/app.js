@@ -2,7 +2,9 @@ const URL = "https://api.openweathermap.org/data/2.5/";
 const search = document.querySelector(".search__location");
 moment.locale("id");
 const API_TOKEN = "65a9d1dbf4371e47a6082beb1eb61f46";
-const QUERY = localStorage.getItem("q");
+const QUERY = localStorage.getItem("q")
+  ? localStorage.getItem("q")
+  : "banyuwangi,id";
 
 // WEATHER_API = `${URL}weather?lat=${coord.latitude}&lon=${coord.longitude}&appid=${API_TOKEN}&units=metric`;
 // FORECAST_API = `${URL}forecast?lat=${coord.latitude}&lon=${coord.longitude}&cnt=3&appid=${API_TOKEN}&units=metric`;
@@ -20,8 +22,6 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
 
 (() => {
   const getData = async (q) => {
-    q = q ? q : "banyuwangi,id";
-
     WEATHER_API = `${URL}weather?q=${q}&appid=${API_TOKEN}&units=metric`;
     FORECAST_API = `${URL}forecast?q=${q}&cnt=3&appid=${API_TOKEN}&units=metric`;
     const res = Promise.all([fetcher(WEATHER_API), fetcher(FORECAST_API)]);
