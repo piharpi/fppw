@@ -115,4 +115,12 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
     localStorage.setItem("q", search.value.replace(/\s/g, ""));
     initializeELement(search.value);
   });
+
+  search.addEventListener("keyup", (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      localStorage.setItem("q", search.value.replace(/\s/g, ""));
+      initializeELement(search.value);
+    }
+  });
 })();
