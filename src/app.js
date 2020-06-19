@@ -23,7 +23,7 @@ const fetcher = (url) => fetch(url).then((data) => data.json());
 (() => {
   const getData = async (q) => {
     WEATHER_API = `${URL}weather?q=${q}&appid=${API_TOKEN}&units=metric`;
-    FORECAST_API = `${URL}forecast?q=${q}&cnt=3&appid=${API_TOKEN}&units=metric`;
+    FORECAST_API = `${URL}forecast?q=${q}&cnt=10&appid=${API_TOKEN}&units=metric`;
     const res = Promise.all([fetcher(WEATHER_API), fetcher(FORECAST_API)]);
     return await res;
     // FIXME: error scoping weather nilai string kosong, tidak dapat diubah dari navigotor
