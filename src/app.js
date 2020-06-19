@@ -4,7 +4,7 @@ moment.locale("id");
 const API_TOKEN = "65a9d1dbf4371e47a6082beb1eb61f46";
 const QUERY = localStorage.getItem("q")
   ? localStorage.getItem("q")
-  : "banyuwangi,id";
+  : "yogyakarta,id";
 
 // WEATHER_API = `${URL}weather?lat=${coord.latitude}&lon=${coord.longitude}&appid=${API_TOKEN}&units=metric`;
 // FORECAST_API = `${URL}forecast?lat=${coord.latitude}&lon=${coord.longitude}&cnt=3&appid=${API_TOKEN}&units=metric`;
