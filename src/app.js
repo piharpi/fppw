@@ -1,7 +1,7 @@
-const URL = "https://api.openweathermap.org/data/2.5/";
+const URL = process.env.API_URL;
 const search = document.querySelector(".search__location");
 moment.locale("id");
-const API_TOKEN = "65a9d1dbf4371e47a6082beb1eb61f46";
+const API_TOKEN = process.env.API_TOKEN;
 const QUERY = localStorage.getItem("q")
   ? localStorage.getItem("q")
   : "yogyakarta,id";
